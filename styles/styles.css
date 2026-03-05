@@ -139,6 +139,17 @@ header nav ul li a {
   transition: background-color 0.2s;
 }
 
+.hamburger::before {
+    content: "\2630";
+    font-size: 2rem;
+}
+
+.hamburger.show::before {
+    content: "\2715";
+    font-size: 2rem;
+}
+
+
 button:hover {
   outline: 2px solid rgb(136, 10, 10);
 }
@@ -147,6 +158,11 @@ button:focus {
   outline: 2px solid var(--white);
   outline-offset: 2px;
 }
+
+.hidden {
+    display: none;
+}
+
 
 .hamburger {
     background: none;
@@ -157,15 +173,7 @@ button:focus {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.hamburger::before {
-    content: "\2630";
-    font-size: 2rem;
-}
 
-.hamburger.show::before {
-    content: "\2715";
-    font-size: 2rem;
-}
 
 
 .services h3::before,
@@ -227,7 +235,7 @@ footer h3 {
 
 /* RESPONSIVE */
 
-@media (max-width: 38rem) {
+@media (min-width: 38rem) {
 
 
     .hamburger {
@@ -242,11 +250,13 @@ footer h3 {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    color: #ffffff;
+    color: #1b2a4a;
       
     gap: 1rem
 
 }
+
+
 
 .navigation.show ul {
    display: flex;
