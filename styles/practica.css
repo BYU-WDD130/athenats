@@ -138,6 +138,9 @@ footer h3 {
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
+
+
+
     .service-columns {
         flex-direction: column;
         gap: 20px;
