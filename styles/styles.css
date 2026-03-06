@@ -227,9 +227,9 @@ button:focus {
     content: "";
     display: inline-block;
     width: 60px;
-    height: 2px;
+    height: 1px;
     background: #234c8a;
-    margin: 0 15px;
+    margin: 0 5px;
     vertical-align: middle;
 }
 
