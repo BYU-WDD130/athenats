@@ -87,10 +87,12 @@ container {
 
 .navigation {
     display: none;
+
 }
 
 .navigation.show {
     display: block;
+
 }
 
 .navigation ul {
@@ -129,7 +131,7 @@ header nav ul li a {
 
 
 #ham-btn.hamburger {
-  color: red;
+  color: rgb(220, 224, 233);
   border: none;
   border-radius: 5px;
   padding: 10px 1px;
@@ -238,20 +240,23 @@ footer h3 {
 @media (min-width: 38rem) {
 
 
-    .hamburger {
+.hamburger {
   display: none;
 }
-      .navigation {
-    display: block;
+
+.navigation {
+   display: block;
+
+
 }
 
 .navigation ul {
     display: flex;
+    align-items: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
     color: #1b2a4a;
-      
     gap: 1rem
 
 }
@@ -260,6 +265,7 @@ footer h3 {
 
 .navigation.show ul {
    display: flex;
+
   }
 
 nav a.active {
