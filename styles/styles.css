@@ -222,16 +222,7 @@ button:focus {
 
 
 
-.services h3::before,
-.services h3::after {
-    content: "";
-    display: inline-block;
-    width: 60px;
-    height: 1px;
-    background: #234c8a;
-    margin: 0 5px;
-    vertical-align: middle;
-}
+
 
 .service-columns {
     display: flex;
@@ -292,6 +283,18 @@ footer h3 {
    display: block;
 
 
+}
+
+
+.services h3::before,
+.services h3::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    background: #234c8a;
+    margin: 0 10px;
+    vertical-align: middle;
 }
 
 .navigation ul {
