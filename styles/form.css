@@ -1,0 +1,18 @@
+#signature-pad{
+  border:2px solid #000;
+  background:#fff;
+  display:block;
+  margin-bottom:10px;
+}
+
+form{
+  max-width:500px;
+  margin:auto;
+  font-family:Arial;
+}
+
+input{
+  width:100%;
+  padding:8px;
+  margin-bottom:10px;
+}

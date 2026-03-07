@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Athenats | Contact</title>
+
+<link rel="stylesheet" href="styles/contact.css">
+<script src="scripts/contact.js" defer></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-section">
+<img src="images/logo.webp" alt="Athenats Logo" class="logo">
+</div>
+
+</header>
+
+
+<main class="contact-container">
+
+<h1>Athenats</h1>
+
+<section class="contact-info">
+
+<h2>Contact Information</h2>
+
+<p><strong>Address:</strong> Arizona, Phoenix, USA</p>
+
+<p><strong>Email:</strong> logisticrenewals@gmail.com</p>
+
+<p><strong>Phone:</strong> (602) 781-8336</p>
+
+</section>
+
+
+<section class="service-cart">
+
+<h3>Selected Service</h3>
+
+<p id="selected-service">Loading service...</p>
+
+<button id="confirmService">Confirm Service</button>
+
+</section>
+
+
+<section id="form-section" class="form-section">
+
+<h2>Client Information</h2>
+
+<form action="https://formspree.io/f/yourformid" method="POST">
+
+<input type="hidden" name="service" id="serviceField">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<h3>Liability Waiver Signature</h3>
+
+<canvas id="signature" width="400" height="200"></canvas>
+
+<button type="button" id="clearSignature">Clear Signature</button>
+
+<input type="hidden" name="signature" id="signatureData">
+
+<button type="submit">Accept and Submit</button>
+
+</form>
+
+</section>
+
+</main>
+
+<script src="scripts/contact.js"></script>
+
+</body>
+</html>
