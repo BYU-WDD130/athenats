@@ -1,8 +1,9 @@
-body{
-font-family:Arial, Helvetica, sans-serif;
-margin:0;
-background:#f5f7fa;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #adc8ee, #8cc0f8, #a9d4f7);
+    
 }
+
 
 .contact-container{
 max-width:900px;
@@ -10,9 +11,73 @@ margin:auto;
 padding:60px 20px;
 }
 
+header {
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical si hay altura */
+    padding: 20px 0;
+
+}
+
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botones de regreso: centrar horizontalmente */
+.back-buttons {
+    display: flex;
+    justify-content: center; /* centro horizontal */
+    gap: 20px;               /* espacio entre botones */
+    margin: 20px 0;
+}
 
 
 
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+
+}
+
+.back-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #004080;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #0066cc;
+}
+
+/* Opcional: centrar contenido principal */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Form & signature canvas centrar */
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#signature {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 .contact-info{
 margin-bottom:40px;
 }
