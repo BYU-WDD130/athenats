@@ -163,3 +163,12 @@ transition:0.3s;
 .back-btn:hover{
 background:#111827;
 }
+
+#thankYouMessage{
+background:#d1fae5; /* verde claro */
+padding:15px;
+border-radius:8px;
+border:1px solid #10b981; /* verde más fuerte */
+text-align:center;
+font-size:16px;
+}

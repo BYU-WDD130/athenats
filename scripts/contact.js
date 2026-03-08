@@ -1,80 +1,84 @@
-const params = new URLSearchParams(window.location.search);
-const service = params.get("service");
-
 const selectedServiceText = document.getElementById("selected-service");
+const serviceField = document.getElementById("serviceField");
 
 // Recuperar servicios desde localStorage
 const selectedServices = JSON.parse(localStorage.getItem("selectedServices")) || [];
 
-if(selectedServices.length > 0){
+if (selectedServices.length > 0) {
     // Mostrar como lista
     selectedServiceText.innerHTML = "<ul>" + selectedServices.map(s => `<li>${s}</li>`).join("") + "</ul>";
 
-    // También pasar al input hidden para enviar al formulario
-    document.getElementById("serviceField").value = selectedServices.join(", ");
-}else{
+    // Pasar al input hidden para enviar al formulario
+    serviceField.value = selectedServices.join(", ");
+} else {
     selectedServiceText.textContent = "No service selected";
 }
 
-
-// SHOW FORM AFTER CONFIRMATION
-
+// -----------------------------
+// 2️⃣ Mostrar formulario al confirmar
+// -----------------------------
 const confirmButton = document.getElementById("confirmService");
 const formSection = document.getElementById("form-section");
 
-confirmButton.addEventListener("click", function(){
-formSection.style.display = "block";
+confirmButton.addEventListener("click", function() {
+    formSection.style.display = "block";
 });
 
-
-// SIGNATURE PAD
-
+// -----------------------------
+// 3️⃣ Configurar el canvas para la firma
+// -----------------------------
 const canvas = document.getElementById("signature");
 const ctx = canvas.getContext("2d");
 
 let drawing = false;
 
 canvas.addEventListener("mousedown", () => {
-drawing = true;
-ctx.beginPath();
+    drawing = true;
+    ctx.beginPath();
 });
 
 canvas.addEventListener("mouseup", () => {
-drawing = false;
+    drawing = false;
 });
 
 canvas.addEventListener("mousemove", (e) => {
-
-if(!drawing) return;
-
-const rect = canvas.getBoundingClientRect();
-
-ctx.lineWidth = 2;
-ctx.lineCap = "round";
-
-ctx.lineTo(
-e.clientX - rect.left,
-e.clientY - rect.top
-);
-
-ctx.stroke();
-
+    if (!drawing) return;
+    const rect = canvas.getBoundingClientRect();
+    ctx.lineWidth = 2;
+    ctx.lineCap = "round";
+    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+    ctx.stroke();
 });
 
-
-// CLEAR SIGNATURE
-
+// -----------------------------
+// 4️⃣ Limpiar firma
+// -----------------------------
 document.getElementById("clearSignature").addEventListener("click", () => {
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
+// -----------------------------
+// 5️⃣ Enviar formulario con mensaje de agradecimiento
+// -----------------------------
+const form = document.querySelector("form");
+const thankYouMessage = document.getElementById("thankYouMessage");
 
-// SAVE SIGNATURE BEFORE SUBMIT
+form.addEventListener("submit", function(e) {
+    // Guardar firma en input hidden
+    document.getElementById("signatureData").value = canvas.toDataURL();
 
-document.querySelector("form").addEventListener("submit", function(){
+    // Prevenir envío inmediato
+    e.preventDefault();
 
-document.getElementById("signatureData").value = canvas.toDataURL();
+    // Mostrar mensaje de agradecimiento
+    thankYouMessage.style.display = "block";
 
+    // Opcional: enviar el formulario después de 1.5 segundos
+    setTimeout(() => {
+        form.submit();
+    }, 1500);
+
+        setTimeout(() => {
+        window.location.href = "index.html";
+    }, 4000);
 });
