@@ -83,5 +83,5 @@ form.addEventListener("submit", function(e){
     // Redirigir a index.html después de 4s
     setTimeout(() => {
         window.location.href = "index.html";
-    }, 4000);
+    }, 2000);
 });
