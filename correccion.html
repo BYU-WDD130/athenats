@@ -3,79 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-
-
-
-<title>Athenats - Carrier Compliance</title>
-
-<link rel="icon" href="images/favicon.webp" type="image/webp">
-<link rel="stylesheet" href="styles/styles.css">
-<script src="scripts/Athenats.js" defer></script>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Client Liability Waiver</title>
+<link rel="stylesheet" href="waiver.css">
 </head>
 <body>
 
-<header>
-    <div class="logo-section">
-        <img src="images/logo.webp" alt="Athenats Logo" class="logo">
-        <h1>ATHENATS</h1>
-        <p class="subtitle">CARRIER COMPLIANCE <br>& GROWTH SOLUTIONS</p>
+<h2>Welcome to [Your Company/Organization Name]</h2>
+
+<button id="open-waiver">Accept Waiver</button>
+
+<!-- Waiver Modal -->
+<div id="waiver-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Client Liability Waiver</h2>
+
+    <div id="waiver-text">
+      <p>
+      By engaging the services of <strong>[Your Company/Organization Name]</strong>, the client acknowledges and agrees to the following:
+      </p>
+      <ol>
+        <li><strong>Accuracy of Information:</strong> The client is solely responsible for providing complete, accurate, and truthful information required for the services. [Your Company/Organization Name] is not liable for any consequences, losses, or damages arising from incomplete, inaccurate, or misleading information provided by the client.</li>
+        <li><strong>Representation of Client:</strong> The client represents that they have the authority to provide the information and make decisions on behalf of any entity or individual they represent. [Your Company/Organization Name] assumes no liability for actions taken based on the client’s representations.</li>
+        <li><strong>Limitation of Liability:</strong> The client agrees to release and hold harmless [Your Company/Organization Name], its employees, agents, and affiliates from any claims, damages, or losses that may result directly or indirectly from the use of the information provided by the client or from reliance on the client’s representations.</li>
+        <li><strong>Acknowledgment:</strong> By signing below, the client confirms that they have read, understood, and voluntarily agree to this waiver and accept full responsibility for the accuracy and completeness of all information provided.</li>
+      </ol>
     </div>
 
-    <!-- Hamburger Button for Mobile -->
-    <button id="ham-btn" class="hamburger" aria-label="Toggle navigation menu"></button>
+    <form id="waiverForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
 
-    <nav id="nav-bar" class="navigation" aria-label="Main Navigation">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav> 
-</header>
+      <label for="address">Address</label>
+      <input type="text" id="address" required>
 
-<main>
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2 class="main-heading">Protecting Your Authority</h2>
-        <p class="description">
-            We help trucking companies establish, maintain, and reinstate 
-            operating credentials efficiently and correctly — so you can 
-            focus on revenue, not paperwork.
-        </p>
-    </section>
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
 
-    <!-- Services Section -->
-    <section class="services">
-        <h3>OUR SERVICES</h3>
-        <div class="service-columns">
-            <ul>
-                <li>New USDOT Number</li>
-                <li>New Operating Authority (MC)</li>
-                <li>Biennial Updates</li>
-                <li>MCS-150 & MCS-150B Updates</li>
-                <li>Address Changes</li>
-                <li>Company Information Changes</li>
-                <li>Reinstatement of Operating Authority</li>
-                <li>Safety Score Reports</li>
-            </ul>
-        </div>
-    </section>
-</main>
+      <label for="date">Date</label>
+      <input type="text" id="date" readonly>
 
-<footer>
-    <h3>Compliance with Confidence</h3>
-    <div class="contact">
-        <p>Email: <a href="mailto:logisticrenewals@gmail.com">logisticrenewals@gmail.com</a></p>
-        <p>Phone: <a href="tel:+16027818336">(602) 781-8336</a></p>
-    </div>
-    <p><a href="index.html">Back to Home</a></p>
-</footer>
+      <label>Signature</label>
+      <canvas id="signature-pad" width="500" height="150"></canvas>
+      <button type="button" id="clear">Clear Signature</button>
 
+      <button type="submit">Submit Waiver</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="waiver.js"></script>
 </body>
 </html>

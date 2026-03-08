@@ -1,14 +1,19 @@
 const params = new URLSearchParams(window.location.search);
 const service = params.get("service");
 
-const serviceText = document.getElementById("selected-service");
-const serviceField = document.getElementById("serviceField");
+const selectedServiceText = document.getElementById("selected-service");
 
-if(service){
-serviceText.textContent = service;
-serviceField.value = service;
+// Recuperar servicios desde localStorage
+const selectedServices = JSON.parse(localStorage.getItem("selectedServices")) || [];
+
+if(selectedServices.length > 0){
+    // Mostrar como lista
+    selectedServiceText.innerHTML = "<ul>" + selectedServices.map(s => `<li>${s}</li>`).join("") + "</ul>";
+
+    // También pasar al input hidden para enviar al formulario
+    document.getElementById("serviceField").value = selectedServices.join(", ");
 }else{
-serviceText.textContent = "No service selected";
+    selectedServiceText.textContent = "No service selected";
 }
 
 

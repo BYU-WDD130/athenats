@@ -33,7 +33,17 @@ header {
     margin: 20px 0;
 }
 
-
+.waiver-text{
+background:#f8f9fb;
+border:1px solid #ccc;
+padding:20px;
+border-radius:8px;
+max-height:200px;
+overflow-y:auto;
+margin-bottom:20px;
+font-size:14px;
+line-height:1.6;
+}
 
 .hero {
     padding: 60px 20px;
