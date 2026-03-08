@@ -1,3 +1,5 @@
+// 1️⃣ Mostrar servicios seleccionados
+// -----------------------------
 const selectedServiceText = document.getElementById("selected-service");
 const serviceField = document.getElementById("serviceField");
 
@@ -58,7 +60,7 @@ document.getElementById("clearSignature").addEventListener("click", () => {
 });
 
 // -----------------------------
-// 5️⃣ Enviar formulario con mensaje de agradecimiento
+// 5️⃣ Enviar formulario con mensaje de agradecimiento y redirección
 // -----------------------------
 const form = document.querySelector("form");
 const thankYouMessage = document.getElementById("thankYouMessage");
@@ -73,12 +75,13 @@ form.addEventListener("submit", function(e) {
     // Mostrar mensaje de agradecimiento
     thankYouMessage.style.display = "block";
 
-    // Opcional: enviar el formulario después de 1.5 segundos
+    // Enviar formulario después de 1.5 segundos
     setTimeout(() => {
         form.submit();
     }, 1500);
 
-        setTimeout(() => {
+    // Redirigir a index.html después de 4 segundos
+    setTimeout(() => {
         window.location.href = "index.html";
     }, 4000);
 });
