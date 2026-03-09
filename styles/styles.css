@@ -341,6 +341,20 @@ footer h3 {
     margin: 10px 0;
 }
 
+.cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1f5fbf;
+    color: #f9f9fa;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin: 1rem;
+
+}
+
 /* RESPONSIVE */
 
 @media (min-width: 38rem) {
