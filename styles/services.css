@@ -66,3 +66,54 @@ transition:.3s;
 .service-btn:hover{
 background:#0b5ed7;
 }
+
+.navigation {
+    display: none;
+
+}
+
+.navigation.show {
+    display: block;
+
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1b2a4a;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+.navigation a:hover {
+    color: #1f5fbf;
+}
+
+.navigation a {
+    position: relative;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #1f5fbf;
+    transition: width 0.3s ease;
+}
+
+.navigation a:hover::after {
+    width: 100%;
+}
